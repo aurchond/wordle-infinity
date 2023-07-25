@@ -18,6 +18,12 @@ function App() {
     coordYAttempt: 0,
   });
 
+  const onSelectLetter = () => {};
+
+  const onDelete = () => {};
+
+  const onEnter = () => {};
+
   return (
     // reminder: className formats according to the related css in App.css
     <div className="App">
