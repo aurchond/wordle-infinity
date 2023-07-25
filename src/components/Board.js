@@ -4,6 +4,7 @@ import Letter from "./Letter";
 
 function Board() {
   // state: board is the value (state variable) and setBoard is the function to update this state
+  // useState is the buil-in React hook used to manage state in functional components, with an initial values in its argument
   const [board, setBoard] = useState(boardDefault);
 
   return (
@@ -30,7 +31,7 @@ function Board() {
         <Letter letterPos={1} attemptVal={2} />
         <Letter letterPos={2} attemptVal={2} />
         <Letter letterPos={3} attemptVal={2} />
-        <Letter letterPos={4} attemptVal={2} />
+        <Letter letterPos={4} attemptVal={2} />{" "}
       </div>
       <div className="row">
         <Letter letterPos={0} attemptVal={3} />
