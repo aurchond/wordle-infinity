@@ -10,19 +10,36 @@ export const AppContext = createContext();
 
 function App() {
   // state: board is the value (state variable) and setBoard is the function to update this state
-  const [board, setBoard] = useState(boardDefault);
+  const [boardState, setBoardState] = useState(boardDefault);
+
+  // state: keep track of the coordinate position within the matrix
+  const [currAttemptState, setCurrAttemptState] = useState({
+    coordXLetter: 0,
+    coordYAttempt: 0,
+  });
+
   return (
+    // reminder: className formats according to the related css in App.css
     <div className="App">
       <nav>
         <h1>Wordle Infinity</h1>
       </nav>
       {/* board is above keyboard in the ui */}
 
-      {/* AppContext's Provider wraps and allows for access to board and setBoard properties 
+      {/* AppContext's Provider wraps and allows for access to state properties above
       for Board, Keyboard and any components below them */}
-      <AppContext.Provider value={{ board, setBoard }}>
-        <Board />
-        <Keyboard />
+      <AppContext.Provider
+        value={{
+          boardState,
+          setBoardState,
+          currAttemptState,
+          setCurrAttemptState,
+        }}
+      >
+        <div className="game">
+          <Board />
+          <Keyboard />
+        </div>
       </AppContext.Provider>
     </div>
   );
