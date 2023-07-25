@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 
 function Key({ keyValue, isBigKey }) {
+  // the required functions from the app level context
   const { onSelectLetter, onDelete, onEnter } = useContext(AppContext);
 
   const selectLetter = () => {
